@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valentine?</title>
+    <style>
+      :root { color-scheme: light; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: #fff;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      }
+      .card {
+        width: min(520px, 92vw);
+        text-align: center;
+      }
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 18px;
+        display: block;
+        box-shadow: 0 12px 30px rgba(0,0,0,.12);
+      }
+      h1 {
+        margin: 18px 0 14px;
+        font-size: clamp(22px, 4vw, 34px);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+      .buttons {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+      }
+      button {
+        border: 0;
+        padding: 12px 18px;
+        border-radius: 999px;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 10px 18px rgba(0,0,0,.08);
+        transition: transform .08s ease, filter .12s ease;
+      }
+      button:active { transform: translateY(1px) scale(0.99); }
+      .yes { background: #ff4d7d; color: white; }
+      .no  { background: #f2f2f2; color: #222; }
+      .yes:hover { filter: brightness(0.97); }
+      .no:hover  { filter: brightness(0.98); }
+
+      .msg {
+        margin-top: 14px;
+        font-weight: 700;
+        font-size: 16px;
+        min-height: 1.4em;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <!-- Put your image file in the same folder and name it "valentine.jpg" -->
+      <img src="valentine.jpg" alt="Valentine" />
+
+      <h1>Will you be my valentine?</h1>
+
+      <div class="buttons">
+        <button class="yes" id="yesBtn">Yes 💖</button>
+        <button class="no" id="noBtn">No</button>
+      </div>
+
+      <div class="msg" id="msg"></div>
+    </main>
+
+    <script>
+      const msg = document.getElementById("msg");
+      document.getElementById("yesBtn").addEventListener("click", () => {
+        msg.textContent = "Yay!! 💘";
+      });
+
+      document.getElementById("noBtn").addEventListener("click", () => {
+        msg.textContent = "Aww okay 😢";
+      });
+    </script>
+  </body>
+</html>
